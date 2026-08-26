@@ -3,10 +3,23 @@
 import { useState } from "react"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 export function AdvancedSearchModal() {
   const [open, setOpen] = useState(false)
@@ -16,7 +29,7 @@ export function AdvancedSearchModal() {
       <DialogTrigger
         className={cn(
           buttonVariants({ variant: "link", size: "sm" }),
-          "h-auto p-0 text-xs underline"
+          "h-auto p-0 text-xs text-white underline"
         )}
       >
         Advanced Search
