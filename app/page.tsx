@@ -1,19 +1,25 @@
-import { Button } from "@/components/ui/button"
+import { MainLayout } from "@/components/layout/main-layout"
+import { SearchForm } from "@/components/search/search-form"
+import { TopicGrid } from "@/components/misc/topic-grid"
+import { BiblioCollection } from "@/components/biblio/biblio-collection"
+import { popularBiblios, latestBiblios, randomBiblios } from "@/lib/data/biblios"
 
-export default function Page() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
+    <MainLayout>
+      <div className="flex flex-col items-center py-8">
+        <h1 className="mb-2 text-3xl font-bold">Welcome to the Library</h1>
+        <p className="mb-6 text-sm text-muted-foreground">
+          Search our collection of books, journals, and digital resources
+        </p>
+        <SearchForm />
       </div>
-    </div>
+
+      <TopicGrid />
+
+      <BiblioCollection biblios={popularBiblios} title="Popular This Week" />
+      <BiblioCollection biblios={latestBiblios} title="New Arrivals" />
+      <BiblioCollection biblios={randomBiblios} title="Just for You" />
+    </MainLayout>
   )
 }
