@@ -10,7 +10,7 @@ export function Footer() {
           <div>
             <h3 className="mb-4 text-sm font-semibold">Library</h3>
             <p className="text-sm text-muted-foreground">
-              Senayan Library Management System
+              Juniver Girsang &amp; Partners
             </p>
             <p className="mt-2 text-sm text-muted-foreground">
               &copy; {new Date().getFullYear()} Main Library. All rights reserved.
@@ -63,7 +63,7 @@ export function Footer() {
         </div>
         <Separator className="my-6" />
         <p className="text-center text-xs text-muted-foreground">
-          Powered by SLIMS v9.8.0 "Bulian D Ace"
+          Powered by Actarix
         </p>
       </div>
     </footer>

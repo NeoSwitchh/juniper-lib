@@ -1,12 +1,12 @@
-# SLIMS OPAC UI Refactor Plan — PHP → Next.js + Shadcn
+# Library OPAC UI Refactor Plan — PHP → Next.js + Shadcn
 
 ## Executive Summary
 
-This plan outlines refactoring the **public-facing OPAC** side of SLIMS (Senayan Library Management System) v9.8.0 "Bulian D Ace" from PHP-based templates to Next.js 16 + Shadcn + Tailwind. The scope is **UI-only** — all data will be dummy/mock data, no live PHP/MySQL backend calls.
+This plan outlines refactoring the **public-facing OPAC** side of the legacy system from PHP-based templates to Next.js 16 + Shadcn + Tailwind. The scope is **UI-only** — all data will be dummy/mock data, no live PHP/MySQL backend calls.
 
-### Current Architecture (SLIMS)
+### Current Architecture (the legacy system)
 
-SLIMS has two themes:
+the legacy system has two themes:
 
 | Theme | Stack | Purpose |
 |-------|-------|---------|
@@ -51,7 +51,7 @@ The target project at `juniper-library/` already has:
 - Search form (`_search-form.php`) — Vue.js 2 with keyword input, search-by filter buttons, advanced search modal trigger, recent search history
 - Topic category grid (5 categories) + Topic modal (10 Dewey categories with icon images)
 - Collections: Popular, Latest, Random (via `classic.php` helper functions)
-- Vue components: `slims-collection`, `slims-group-subject`, `slims-group-member`
+- Legacy Vue components: `collection`, `group-subject`, `group-member`
 
 **Next.js Target**: `app/page.tsx`
 
@@ -185,7 +185,7 @@ The target project at `juniper-library/` already has:
 
 ## Component Inventory & Shadcn Equivalents
 
-| SLIMS Concept | Next.js / Shadcn | Notes |
+| the legacy system Concept | Next.js / Shadcn | Notes |
 |---|---|---|
 | Navbar with dropdowns | `NavigationMenu`, `DropdownMenu`, `Button` | From `@/components/ui/` |
 | Search input | `Input` | With `Search` icon from Hugeicons |
@@ -628,7 +628,7 @@ Key responsive patterns:
 
 ## Out of Scope
 
-- Admin backend UI (`admin/` or `senayan3-cms/` areas)
+- Admin backend UI (`admin/` areas)
 - Live database integration
 - Authentication/session management with real backend
 - Real search/indexing engine integration
